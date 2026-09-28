@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 420" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" role="img" aria-label="Схема раздельной маршрутизации: прямой выход, локальный обход DPI и туннели до VPS">
+  <!-- Адреса взяты из документационного диапазона RFC 5737 (203.0.113.0/24), домены — example. -->
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#52525b"/></marker>
+  </defs>
+  <rect width="960" height="420" rx="12" fill="#fafafa"/>
+  <g font-size="13">
+    <rect x="24" y="150" width="150" height="110" rx="10" fill="#fff" stroke="#d4d4d8"/>
+    <text x="99" y="182" text-anchor="middle" font-weight="600" fill="#18181b">ПК / телефон</text>
+    <text x="99" y="204" text-anchor="middle" font-size="11" fill="#71717a">TUN-клиент</text>
+    <text x="99" y="222" text-anchor="middle" font-size="11" fill="#71717a">split DNS</text>
+
+    <rect x="200" y="130" width="226" height="150" rx="10" fill="#ccfbf1" stroke="#0f766e"/>
+    <text x="313" y="160" text-anchor="middle" font-weight="600" fill="#134e4a">Правила маршрутов</text>
+    <g font-size="11" fill="#115e59">
+      <text x="214" y="188">GeoIP: локальные → напрямую</text>
+      <text x="214" y="210">GeoSite: список → туннель</text>
+      <text x="214" y="232">отдельные сервисы → обход DPI</text>
+      <text x="214" y="254">остальное → по умолчанию</text>
+    </g>
+
+    <rect x="470" y="30" width="200" height="70" rx="10" fill="#fff" stroke="#d4d4d8"/>
+    <text x="570" y="60" text-anchor="middle" font-weight="600" fill="#18181b">Напрямую</text>
+    <text x="570" y="80" text-anchor="middle" font-size="11" fill="#71717a">без туннеля</text>
+
+    <rect x="470" y="124" width="200" height="70" rx="10" fill="#fff" stroke="#d4d4d8"/>
+    <text x="570" y="152" text-anchor="middle" font-weight="600" fill="#18181b">zapret2 (локально)</text>
+    <text x="570" y="172" text-anchor="middle" font-size="11" fill="#71717a">nftables → NFQUEUE → nfqws2</text>
+
+    <rect x="470" y="218" width="200" height="70" rx="10" fill="#fff" stroke="#d4d4d8"/>
+    <text x="570" y="246" text-anchor="middle" font-weight="600" fill="#18181b">AmneziaWG / SOCKS5</text>
+    <text x="570" y="266" text-anchor="middle" font-size="11" fill="#71717a">обфусцированный WireGuard</text>
+
+    <rect x="470" y="312" width="200" height="70" rx="10" fill="#fff" stroke="#d4d4d8"/>
+    <text x="570" y="340" text-anchor="middle" font-weight="600" fill="#18181b">VLESS (Xray, XHTTP)</text>
+    <text x="570" y="360" text-anchor="middle" font-size="11" fill="#71717a">через CDN, TLS на Nginx</text>
+
+    <rect x="740" y="240" width="196" height="120" rx="10" fill="#18181b"/>
+    <text x="838" y="270" text-anchor="middle" font-weight="600" fill="#fff">VPS (Ubuntu)</text>
+    <g font-size="11" fill="#d4d4d8">
+      <text x="756" y="294">203.0.113.10</text>
+      <text x="756" y="314">Docker, ufw, fail2ban</text>
+      <text x="756" y="334">SSH только по ключу</text>
+    </g>
+    <rect x="740" y="30" width="196" height="70" rx="10" fill="#fff" stroke="#d4d4d8"/>
+    <text x="838" y="70" text-anchor="middle" font-weight="600" fill="#18181b">Интернет</text>
+  </g>
+  <g stroke="#52525b" stroke-width="1.6" fill="none" marker-end="url(#a)">
+    <path d="M174 205 H196"/>
+    <path d="M426 170 C448 170 448 65 466 65"/>
+    <path d="M426 190 C448 190 448 159 466 159"/>
+    <path d="M426 220 C448 220 448 253 466 253"/>
+    <path d="M426 240 C448 240 448 347 466 347"/>
+    <path d="M670 65 H736"/>
+    <path d="M670 159 C705 159 705 80 736 80"/>
+    <path d="M670 253 C705 253 705 280 736 280"/>
+    <path d="M670 347 C705 347 705 320 736 320"/>
+    <path d="M838 240 V104"/>
+  </g>
+</svg>

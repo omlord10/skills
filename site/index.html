@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Страница полностью статическая: без скриптов, внешних шрифтов и счётчиков.
+     CSP это закрепляет: браузер откажется грузить что-либо не с этого же адреса. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex">
+<meta name="description" content="Портфолио навыков: администрирование Linux, сети и VPN, информационная безопасность, веб-разработка.">
+<link rel="icon" href="img/icon.svg" type="image/svg+xml">
+<title>Портфолио навыков</title>
+<style>
+  :root {
+    --bg: #fafaf9; --surface: #ffffff; --text: #1c1917; --muted: #57534e; --line: #e7e5e4;
+    --accent: #0f766e; --accent-soft: #ccfbf1; --chip: #f5f5f4;
+    --radius: 14px; --maxw: 1040px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0c0a09; --surface: #1c1917; --text: #f5f5f4; --muted: #a8a29e; --line: #292524;
+      --accent: #2dd4bf; --accent-soft: #134e4a; --chip: #292524;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 16px; }
+  a { color: var(--accent); }
+
+  header.top { border-bottom: 1px solid var(--line); background: var(--surface); position: sticky; top: 0; z-index: 5; }
+  header.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 56px; }
+  .brand { font-weight: 700; letter-spacing: -0.01em; }
+  nav { display: flex; gap: 18px; font-size: 14px; }
+  nav a { color: var(--muted); text-decoration: none; }
+  nav a:hover { color: var(--text); }
+
+  .hero { padding: 64px 0 40px; }
+  .hero h1 { font-size: clamp(28px, 5vw, 44px); line-height: 1.15; letter-spacing: -0.02em; margin: 0 0 16px; max-width: 18em; }
+  .hero p { font-size: 18px; color: var(--muted); max-width: 40em; margin: 0 0 24px; }
+  .targets { display: flex; flex-wrap: wrap; gap: 8px; }
+  .target { background: var(--accent-soft); color: var(--text); border-radius: 999px; padding: 6px 14px; font-size: 14px; font-weight: 600; }
+
+  section { padding: 40px 0; }
+  h2 { font-size: 26px; letter-spacing: -0.01em; margin: 0 0 8px; }
+  .lead { color: var(--muted); margin: 0 0 28px; max-width: 42em; }
+
+  .skills { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; }
+  .card h3 { margin: 0 0 12px; font-size: 17px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; list-style: none; }
+  .chips li { background: var(--chip); border-radius: 8px; padding: 3px 10px; font-size: 13.5px; }
+  .card.theory { border-style: dashed; }
+  .card.theory .chips li { color: var(--muted); }
+  .note { font-size: 13.5px; color: var(--muted); margin: 12px 0 0; }
+
+  .project { display: grid; grid-template-columns: 1fr; gap: 20px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; margin-bottom: 20px; }
+  @media (min-width: 880px) { .project.with-fig { grid-template-columns: 5fr 6fr; align-items: start; } }
+  .project h3 { margin: 0 0 6px; font-size: 20px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 14px; padding: 0; list-style: none; }
+  .tags li { font-size: 12.5px; font-weight: 600; color: var(--accent); border: 1px solid var(--accent); border-radius: 999px; padding: 1px 9px; }
+  .project ul.points { margin: 0; padding-left: 20px; }
+  .project ul.points li { margin-bottom: 6px; }
+  figure { margin: 0; }
+  figure img { width: 100%; height: auto; display: block; border-radius: 10px; border: 1px solid var(--line); }
+  figure + figure { margin-top: 12px; }
+  figure a { display: block; }
+  figcaption { font-size: 12.5px; color: var(--muted); margin-top: 6px; }
+
+  .soft { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; }
+  .soft .card p { margin: 0; color: var(--muted); font-size: 15px; }
+
+  footer { border-top: 1px solid var(--line); padding: 28px 0 48px; color: var(--muted); font-size: 14px; }
+  footer p { margin: 0 0 6px; }
+
+  @media (max-width: 560px) {
+    nav { display: none; }
+    .hero { padding: 40px 0 24px; }
+    .project { padding: 18px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <span class="brand">Портфолио навыков</span>
+    <nav aria-label="Разделы">
+      <a href="#skills">Навыки</a>
+      <a href="#projects">Проекты</a>
+      <a href="#approach">Как работаю</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="hero">
+    <h1>Linux, сети и информационная безопасность — на практике, а не только в теории</h1>
+    <p>Студент специалитета по компьютерной безопасности. Сам администрирую сервер, собрал свою
+       VPN-инфраструктуру, настроил Secure Boot со своими ключами и пишу full-stack проект
+       с продуманным разграничением доступа. Ищу стажировку или junior-позицию.</p>
+    <div class="targets" aria-label="Интересующие направления">
+      <span class="target">Системный администратор</span>
+      <span class="target">DevOps (junior)</span>
+      <span class="target">Информационная безопасность</span>
+      <span class="target">Аналитик (junior)</span>
+    </div>
+  </div>
+
+  <section id="skills">
+    <h2>Hard skills</h2>
+    <p class="lead">То, чем пользовался на практике. Отдельно отмечено то, что знаю только в теории.</p>
+    <div class="skills">
+      <div class="card">
+        <h3>Linux и администрирование</h3>
+        <ul class="chips">
+          <li>Ubuntu / Kubuntu</li><li>systemd: юниты, таймеры, песочница</li><li>APT</li>
+          <li>OpenSSH (hardening)</li><li>ufw</li><li>fail2ban</li><li>unattended-upgrades</li>
+          <li>разметка дисков, LVM</li><li>восстановление с live USB</li><li>Docker, Compose</li>
+          <li>Nginx</li><li>VirtualBox</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Сети</h3>
+        <ul class="chips">
+          <li>TCP/IP</li><li>маршрутизация</li><li>DNS, split DNS</li><li>NAT</li>
+          <li>WireGuard / AmneziaWG</li><li>VLESS / Xray</li><li>SOCKS5</li>
+          <li>nftables, NFQUEUE</li><li>tcpdump</li><li>ss, ip</li><li>Tailscale</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Безопасность</h3>
+        <ul class="chips">
+          <li>основы пентеста</li><li>Nmap</li><li>Burp Suite</li><li>Metasploit</li><li>sqlmap</li>
+          <li>Wireshark</li><li>RBAC</li><li>JWT, хеширование паролей</li><li>сигнатурный анализ</li>
+          <li>UEFI Secure Boot, подпись кода</li><li>анализ рисков</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Программирование</h3>
+        <ul class="chips">
+          <li>C / C++</li><li>Python</li><li>TypeScript</li><li>Java</li><li>C#</li><li>Verilog</li>
+          <li>Bash</li><li>SQL (базовый)</li><li>Big-O, амортизационный анализ</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Инструменты и self-hosting</h3>
+        <ul class="chips">
+          <li>Git</li><li>PostgreSQL</li><li>Prisma</li><li>Next.js, React</li><li>CalDAV-сервер</li>
+          <li>локальные LLM (llama.cpp)</li><li>Doxygen</li><li>LaTeX</li><li>MS Office (уверенно)</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Железо</h3>
+        <ul class="chips">
+          <li>сборка и апгрейд ПК</li><li>пайка</li><li>ПЛИС</li><li>Arduino</li><li>UART</li>
+        </ul>
+      </div>
+      <div class="card theory">
+        <h3>Знаю на уровне концепций</h3>
+        <ul class="chips">
+          <li>Ansible</li><li>CI/CD</li><li>Kubernetes</li><li>Terraform</li><li>Prometheus / Grafana</li>
+        </ul>
+        <p class="note">Без практики в работе. Это следующее, что планирую освоить.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Проекты</h2>
+    <p class="lead">Все изображения ниже — схемы и макеты, нарисованные специально для этой страницы
+       на тестовых данных. Реальных скриншотов, пользователей и адресов здесь нет.</p>
+
+    <article class="project with-fig">
+      <div>
+        <h3>Интернет-магазин с панелями администратора и модератора</h3>
+        <ul class="tags"><li>Next.js</li><li>TypeScript</li><li>PostgreSQL</li><li>Docker</li><li>Nginx</li></ul>
+        <ul class="points">
+          <li>Витрина, REST API, админка, чат поддержки, боты для двух мессенджеров; монорепозиторий с общим движком ботов.</li>
+          <li>Аутентификация на JWT-сессиях, пароли в bcrypt, подтверждение e-mail и сброс пароля.</li>
+          <li>Единая матрица прав (RBAC): проверяется и в Edge middleware, и в каждом обработчике API.</li>
+          <li>Валидация всех входных данных через zod, журнал аудита действий администраторов.</li>
+          <li>Коммерческий проект, код закрыт.</li>
+        </ul>
+      </div>
+      <div>
+        <figure>
+          <a href="img/shop-catalog.svg" title="Открыть в полном размере"><img src="img/shop-catalog.svg" width="960" height="560" alt="Макет каталога: фильтры и шесть тестовых товаров" loading="lazy"></a>
+          <figcaption>Макет витрины. Названия и цены тестовые.</figcaption>
+        </figure>
+        <figure>
+          <a href="img/admin-orders.svg" title="Открыть в полном размере"><img src="img/admin-orders.svg" width="960" height="560" alt="Макет админ-панели: тестовые заказы и журнал аудита" loading="lazy"></a>
+          <figcaption>Роль модератора: разделы без прав заблокированы, отказ попадает в журнал.</figcaption>
+        </figure>
+        <figure>
+          <a href="img/rbac-flow.svg" title="Открыть в полном размере"><img src="img/rbac-flow.svg" width="960" height="400" alt="Схема двойной проверки прав: middleware и обработчик API" loading="lazy"></a>
+          <figcaption>Одна матрица прав, две точки проверки.</figcaption>
+        </figure>
+      </div>
+    </article>
+
+    <article class="project with-fig">
+      <div>
+        <h3>Своя VPN-инфраструктура и обход DPI</h3>
+        <ul class="tags"><li>AmneziaWG</li><li>VLESS / Xray</li><li>nftables</li><li>zapret2</li></ul>
+        <ul class="points">
+          <li>Несколько протоколов на VPS: обфусцированный WireGuard, SOCKS5 и VLESS за CDN с TLS на Nginx.</li>
+          <li>Локальный обход DPI через nftables → NFQUEUE → nfqws2.</li>
+          <li>Раздельная маршрутизация по GeoIP/GeoSite и split DNS: локальный трафик идёт напрямую.</li>
+          <li>Отладка по уровням: tcpdump, ss, счётчики интерфейсов и правил nft.</li>
+        </ul>
+      </div>
+      <figure>
+        <a href="img/vpn-routing.svg" title="Открыть в полном размере"><img src="img/vpn-routing.svg" width="960" height="420" alt="Схема маршрутов: напрямую, через обход DPI и через туннели до VPS" loading="lazy"></a>
+        <figcaption>Адрес сервера условный: 203.0.113.0/24 — диапазон для документации (RFC 5737).</figcaption>
+      </figure>
+    </article>
+
+    <article class="project">
+      <div>
+        <h3>Администрирование и защита Linux-сервера</h3>
+        <ul class="tags"><li>Ubuntu 24.04</li><li>ufw</li><li>fail2ban</li><li>OpenSSH</li><li>Docker</li></ul>
+        <ul class="points">
+          <li>Провёл аудит безопасности VPS и закрыл найденное: обновления плюс автоматические обновления безопасности.</li>
+          <li>Файрвол с запретом по умолчанию, fail2ban с нарастающими банами против перебора SSH.</li>
+          <li>Вход по SSH только по ключам; сервис, случайно открытый наружу, перевёл на localhost.</li>
+          <li>Проверил хост на признаки компрометации.</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="project with-fig">
+      <div>
+        <h3>UEFI Secure Boot со своими ключами (Linux + Windows)</h3>
+        <ul class="tags"><li>UEFI</li><li>sbsign</li><li>MOK</li><li>rEFInd</li><li>DKMS</li></ul>
+        <ul class="points">
+          <li>Secure Boot оставлен включённым на ПК с двумя ОС: свой X.509-ключ добавлен в базу db рядом с сертификатами Microsoft.</li>
+          <li>Добавлены новые сертификаты Microsoft 2023, чтобы Windows продолжала загружаться после их смены.</li>
+          <li>Подписаны загрузчик, GRUB и ядро, которое грузится как EFI stub; DKMS-модули подписываются через MOK.</li>
+          <li>Хук пакетного менеджера переподписывает ядро после каждого обновления. Нашёл и исправил в нём баг: подписи на GRUB накапливались при каждом запуске.</li>
+        </ul>
+      </div>
+      <figure>
+        <a href="img/secure-boot.svg" title="Открыть в полном размере"><img src="img/secure-boot.svg" width="960" height="380" alt="Цепочка доверия: прошивка, rEFInd, ядро, GRUB, Windows" loading="lazy"></a>
+        <figcaption>Цепочка доверия от прошивки до модулей ядра.</figcaption>
+      </figure>
+    </article>
+
+    <article class="project with-fig">
+      <div>
+        <h3>Аппаратный сканер USB-накопителей</h3>
+        <ul class="tags"><li>C</li><li>Verilog</li><li>Arduino</li><li>ПЛИС</li></ul>
+        <ul class="points">
+          <li>Посекторный сигнатурный поиск по флешке; сигнатура на стыке двух секторов всё равно находится.</li>
+          <li>ПЛИС выводит журнал проверки на HDMI (640×480@60, свой PLL), связь между платами по UART.</li>
+          <li>Движок на платформенно-независимом C, документация в Doxygen.</li>
+        </ul>
+      </div>
+      <figure>
+        <a href="img/usb-guard.svg" title="Открыть в полном размере"><img src="img/usb-guard.svg" width="960" height="300" alt="Схема: накопитель, Arduino, ПЛИС, HDMI-терминал" loading="lazy"></a>
+        <figcaption>Для тестов используется безопасный файл EICAR.</figcaption>
+      </figure>
+    </article>
+
+    <article class="project">
+      <div>
+        <h3>Ещё проекты</h3>
+        <ul class="points">
+          <li><strong>Сигнатурный антивирус на C:</strong> разбор HEX-сигнатур и смещений, проверка типа файла, коды ошибок на enum.</li>
+          <li><strong>Анализ рисков (Python, Tkinter):</strong> дерево «компания → город → площадка», агрегация вероятности и ущерба, отмена действий, JSON и PDF-отчёты.</li>
+          <li><strong>Возведение матриц в степень по модулю (C):</strong> CLI, генератор тестов в CSV, безопасные обёртки для работы с памятью.</li>
+        </ul>
+      </div>
+    </article>
+  </section>
+
+  <section id="approach">
+    <h2>Как работаю</h2>
+    <p class="lead">Soft skills, которые видно по проектам выше.</p>
+    <div class="soft">
+      <div class="card"><h3>Гипотеза → проверка</h3><p>Не меняю настройки наугад: сначала смотрю, где теряются пакеты или что пишет лог, потом правлю.</p></div>
+      <div class="card"><h3>Документирую</h3><p>Веду личную базу знаний: как настроено и почему. Повторить или откатить можно без раскопок.</p></div>
+      <div class="card"><h3>Учусь сам</h3><p>Курс по этичному хакингу, лабораторные в изолированных средах, хакатоны и CTF.</p></div>
+      <div class="card"><h3>Языки</h3><p>Русский — родной. Английский — B1, читаю документацию свободно.</p></div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Контакты и полное резюме — по запросу.</p>
+    <p>Сайт статический: без JavaScript, cookies, счётчиков и внешних запросов.</p>
+  </div>
+</footer>
+
+</body>
+</html>

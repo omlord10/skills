@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 300" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" role="img" aria-label="Схема аппаратного сканера USB: накопитель, Arduino с USB Host, ПЛИС и HDMI-терминал">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#52525b"/></marker>
+  </defs>
+  <rect width="960" height="300" rx="12" fill="#fafafa"/>
+  <g font-size="13" text-anchor="middle">
+    <rect x="24" y="100" width="140" height="80" rx="10" fill="#fff" stroke="#d4d4d8"/>
+    <text x="94" y="134" font-weight="600" fill="#18181b">USB-накопитель</text><text x="94" y="154" font-size="11" fill="#71717a">сектора по 512 Б</text>
+
+    <rect x="224" y="90" width="200" height="100" rx="10" fill="#ccfbf1" stroke="#0f766e"/>
+    <text x="324" y="122" font-weight="600" fill="#134e4a">Arduino + USB Host</text>
+    <text x="324" y="144" font-size="11" fill="#115e59">сигнатурный движок на C</text>
+    <text x="324" y="162" font-size="11" fill="#115e59">буфер на стыке секторов</text>
+
+    <rect x="494" y="90" width="200" height="100" rx="10" fill="#ccfbf1" stroke="#0f766e"/>
+    <text x="594" y="122" font-weight="600" fill="#134e4a">ПЛИС (Verilog)</text>
+    <text x="594" y="144" font-size="11" fill="#115e59">кнопки, светодиоды</text>
+    <text x="594" y="162" font-size="11" fill="#115e59">видео 640×480@60, PLL</text>
+
+    <rect x="764" y="100" width="172" height="80" rx="10" fill="#18181b"/>
+    <text x="850" y="134" font-weight="600" fill="#fff">HDMI-терминал</text>
+    <text x="850" y="154" font-size="11" fill="#a3e635" font-family="ui-monospace, Menlo, monospace">[OK] EICAR найден</text>
+  </g>
+  <g stroke="#52525b" stroke-width="1.6" fill="none" marker-end="url(#a)">
+    <path d="M164 140 H220"/><path d="M424 140 H490"/><path d="M694 140 H760"/>
+  </g>
+  <g font-size="11" fill="#52525b" text-anchor="middle">
+    <text x="457" y="128">UART</text><text x="457" y="162">9600 8N1</text>
+  </g>
+  <text x="480" y="250" font-size="12" fill="#71717a" text-anchor="middle">Тестовая сигнатура — безопасный файл EICAR, настоящее вредоносное ПО не используется.</text>
+</svg>

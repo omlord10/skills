@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" role="img" aria-label="Макет каталога интернет-магазина с тестовыми товарами">
+  <!-- Макет, нарисованный вручную: все названия, цены и адреса — тестовые. -->
+  <rect width="960" height="560" rx="12" fill="#f4f4f5"/>
+  <rect width="960" height="36" rx="12" fill="#e4e4e7"/>
+  <rect y="24" width="960" height="12" fill="#e4e4e7"/>
+  <circle cx="22" cy="18" r="6" fill="#f87171"/><circle cx="42" cy="18" r="6" fill="#fbbf24"/><circle cx="62" cy="18" r="6" fill="#34d399"/>
+  <rect x="300" y="8" width="360" height="20" rx="10" fill="#fff"/>
+  <text x="480" y="22" font-size="11" fill="#71717a" text-anchor="middle">demo-shop.example.com/catalog</text>
+
+  <rect y="36" width="960" height="56" fill="#fff"/>
+  <text x="32" y="71" font-size="20" font-weight="700" fill="#18181b">Demo Store</text>
+  <rect x="260" y="52" width="360" height="24" rx="12" fill="#f4f4f5"/>
+  <text x="276" y="68" font-size="12" fill="#a1a1aa">Поиск по каталогу…</text>
+  <text x="700" y="68" font-size="13" fill="#3f3f46">Каталог</text>
+  <text x="768" y="68" font-size="13" fill="#3f3f46">Корзина (2)</text>
+  <rect x="860" y="52" width="72" height="24" rx="12" fill="#0f766e"/>
+  <text x="896" y="68" font-size="12" fill="#fff" text-anchor="middle">Войти</text>
+
+  <rect x="24" y="112" width="196" height="424" rx="10" fill="#fff"/>
+  <text x="40" y="140" font-size="14" font-weight="700" fill="#18181b">Фильтры</text>
+  <text x="40" y="170" font-size="12" fill="#52525b">Категория</text>
+  <g font-size="12" fill="#3f3f46">
+    <rect x="40" y="182" width="12" height="12" rx="3" fill="#0f766e"/><text x="60" y="193">Механизмы</text>
+    <rect x="40" y="204" width="12" height="12" rx="3" fill="none" stroke="#a1a1aa"/><text x="60" y="215">Стрелки</text>
+    <rect x="40" y="226" width="12" height="12" rx="3" fill="none" stroke="#a1a1aa"/><text x="60" y="237">Заготовки</text>
+    <rect x="40" y="248" width="12" height="12" rx="3" fill="none" stroke="#a1a1aa"/><text x="60" y="259">Наборы</text>
+  </g>
+  <text x="40" y="294" font-size="12" fill="#52525b">Цена, ₽</text>
+  <rect x="40" y="306" width="164" height="4" rx="2" fill="#e4e4e7"/>
+  <rect x="64" y="306" width="96" height="4" rx="2" fill="#0f766e"/>
+  <circle cx="64" cy="308" r="7" fill="#fff" stroke="#0f766e" stroke-width="2"/>
+  <circle cx="160" cy="308" r="7" fill="#fff" stroke="#0f766e" stroke-width="2"/>
+  <text x="40" y="334" font-size="11" fill="#71717a">100 — 2 500</text>
+  <text x="40" y="370" font-size="12" fill="#52525b">В наличии</text>
+  <rect x="160" y="358" width="32" height="16" rx="8" fill="#0f766e"/><circle cx="184" cy="366" r="6" fill="#fff"/>
+
+  <text x="244" y="136" font-size="18" font-weight="700" fill="#18181b">Механизмы</text>
+  <text x="244" y="156" font-size="12" fill="#71717a">6 тестовых позиций</text>
+  <g font-size="12">
+    <g transform="translate(244,172)">
+      <rect width="220" height="172" rx="10" fill="#fff"/><rect x="12" y="12" width="196" height="92" rx="8" fill="#e4e4e7"/>
+      <circle cx="110" cy="58" r="28" fill="none" stroke="#a1a1aa" stroke-width="3"/><path d="M110 58 L110 40 M110 58 L124 64" stroke="#71717a" stroke-width="3" stroke-linecap="round"/>
+      <text x="12" y="126" fill="#18181b">Тестовый товар 01</text><text x="12" y="150" font-weight="700" fill="#18181b">450 ₽</text>
+      <rect x="140" y="136" width="68" height="22" rx="11" fill="#0f766e"/><text x="174" y="151" fill="#fff" text-anchor="middle" font-size="11">В корзину</text>
+    </g>
+    <g transform="translate(476,172)">
+      <rect width="220" height="172" rx="10" fill="#fff"/><rect x="12" y="12" width="196" height="92" rx="8" fill="#e4e4e7"/>
+      <circle cx="110" cy="58" r="28" fill="none" stroke="#a1a1aa" stroke-width="3"/><path d="M110 58 L96 46 M110 58 L128 58" stroke="#71717a" stroke-width="3" stroke-linecap="round"/>
+      <text x="12" y="126" fill="#18181b">Тестовый товар 02</text><text x="12" y="150" font-weight="700" fill="#18181b">1 200 ₽</text>
+      <rect x="140" y="136" width="68" height="22" rx="11" fill="#0f766e"/><text x="174" y="151" fill="#fff" text-anchor="middle" font-size="11">В корзину</text>
+    </g>
+    <g transform="translate(708,172)">
+      <rect width="220" height="172" rx="10" fill="#fff"/><rect x="12" y="12" width="196" height="92" rx="8" fill="#e4e4e7"/>
+      <circle cx="110" cy="58" r="28" fill="none" stroke="#a1a1aa" stroke-width="3"/><path d="M110 58 L110 36 M110 58 L94 68" stroke="#71717a" stroke-width="3" stroke-linecap="round"/>
+      <text x="12" y="126" fill="#18181b">Тестовый товар 03</text><text x="12" y="150" font-weight="700" fill="#18181b">780 ₽</text>
+      <rect x="120" y="136" width="88" height="22" rx="11" fill="#f4f4f5"/><text x="164" y="151" fill="#71717a" text-anchor="middle" font-size="11">Нет в наличии</text>
+    </g>
+    <g transform="translate(244,356)">
+      <rect width="220" height="172" rx="10" fill="#fff"/><rect x="12" y="12" width="196" height="92" rx="8" fill="#e4e4e7"/>
+      <rect x="82" y="30" width="56" height="56" rx="6" fill="none" stroke="#a1a1aa" stroke-width="3"/>
+      <text x="12" y="126" fill="#18181b">Тестовый товар 04</text><text x="12" y="150" font-weight="700" fill="#18181b">2 300 ₽</text>
+      <rect x="140" y="136" width="68" height="22" rx="11" fill="#0f766e"/><text x="174" y="151" fill="#fff" text-anchor="middle" font-size="11">В корзину</text>
+    </g>
+    <g transform="translate(476,356)">
+      <rect width="220" height="172" rx="10" fill="#fff"/><rect x="12" y="12" width="196" height="92" rx="8" fill="#e4e4e7"/>
+      <circle cx="110" cy="58" r="28" fill="none" stroke="#a1a1aa" stroke-width="3"/><path d="M110 58 L120 38 M110 58 L90 58" stroke="#71717a" stroke-width="3" stroke-linecap="round"/>
+      <text x="12" y="126" fill="#18181b">Тестовый товар 05</text><text x="12" y="150" font-weight="700" fill="#18181b">150 ₽</text>
+      <rect x="140" y="136" width="68" height="22" rx="11" fill="#0f766e"/><text x="174" y="151" fill="#fff" text-anchor="middle" font-size="11">В корзину</text>
+    </g>
+    <g transform="translate(708,356)">
+      <rect width="220" height="172" rx="10" fill="#fff"/><rect x="12" y="12" width="196" height="92" rx="8" fill="#e4e4e7"/>
+      <rect x="82" y="30" width="56" height="56" rx="28" fill="none" stroke="#a1a1aa" stroke-width="3" stroke-dasharray="6 5"/>
+      <text x="12" y="126" fill="#18181b">Тестовый набор 06</text><text x="12" y="150" font-weight="700" fill="#18181b">990 ₽</text>
+      <rect x="140" y="136" width="68" height="22" rx="11" fill="#0f766e"/><text x="174" y="151" fill="#fff" text-anchor="middle" font-size="11">В корзину</text>
+    </g>
+  </g>
+</svg>

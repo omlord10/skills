@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" role="img" aria-label="Макет панели администратора: таблица тестовых заказов и журнал аудита">
+  <!-- Макет, нарисованный вручную: заказы, имена и e-mail — тестовые (example.com). -->
+  <rect width="960" height="560" rx="12" fill="#f4f4f5"/>
+  <rect width="200" height="560" rx="12" fill="#18181b"/>
+  <rect x="188" width="12" height="560" fill="#18181b"/>
+  <text x="24" y="44" font-size="16" font-weight="700" fill="#fff">Админ-панель</text>
+  <text x="24" y="64" font-size="11" fill="#a1a1aa">роль: MODERATOR</text>
+  <g font-size="13" fill="#d4d4d8">
+    <text x="24" y="112">Дашборд</text>
+    <rect x="12" y="128" width="176" height="30" rx="6" fill="#0f766e"/><text x="24" y="148" fill="#fff">Заказы</text>
+    <text x="24" y="184">Товары</text>
+    <text x="24" y="216">Вопросы и отзывы</text>
+    <text x="24" y="248">Чаты поддержки</text>
+    <text x="24" y="280" fill="#52525b">Пользователи 🔒</text>
+    <text x="24" y="312" fill="#52525b">Настройки 🔒</text>
+    <text x="24" y="344">Журнал аудита</text>
+  </g>
+  <text x="24" y="530" font-size="10" fill="#71717a">🔒 — нет прав у этой роли</text>
+
+  <text x="228" y="50" font-size="20" font-weight="700" fill="#18181b">Заказы</text>
+  <g font-size="12">
+    <rect x="228" y="68" width="160" height="64" rx="10" fill="#fff"/><text x="244" y="92" fill="#71717a">Новые</text><text x="244" y="118" font-size="22" font-weight="700" fill="#18181b">3</text>
+    <rect x="400" y="68" width="160" height="64" rx="10" fill="#fff"/><text x="416" y="92" fill="#71717a">В сборке</text><text x="416" y="118" font-size="22" font-weight="700" fill="#18181b">2</text>
+    <rect x="572" y="68" width="160" height="64" rx="10" fill="#fff"/><text x="588" y="92" fill="#71717a">Отправлены</text><text x="588" y="118" font-size="22" font-weight="700" fill="#18181b">5</text>
+    <rect x="744" y="68" width="192" height="64" rx="10" fill="#fff"/><text x="760" y="92" fill="#71717a">Ждут оплаты</text><text x="760" y="118" font-size="22" font-weight="700" fill="#18181b">1</text>
+  </g>
+
+  <rect x="228" y="148" width="708" height="236" rx="10" fill="#fff"/>
+  <g font-size="12" fill="#71717a">
+    <text x="248" y="176">Номер</text><text x="360" y="176">Покупатель</text><text x="560" y="176">Сумма</text><text x="660" y="176">Оплата</text><text x="790" y="176">Статус</text>
+  </g>
+  <line x1="244" y1="188" x2="920" y2="188" stroke="#e4e4e7"/>
+  <g font-size="12" fill="#18181b">
+    <text x="248" y="214">TEST-0001</text><text x="360" y="214">user1@example.com</text><text x="560" y="214">1 650 ₽</text><text x="660" y="214">СБП</text>
+    <rect x="786" y="200" width="70" height="20" rx="10" fill="#dbeafe"/><text x="821" y="214" text-anchor="middle" fill="#1d4ed8" font-size="11">Новый</text>
+    <text x="248" y="252">TEST-0002</text><text x="360" y="252">user2@example.com</text><text x="560" y="252">780 ₽</text><text x="660" y="252">Перевод</text>
+    <rect x="786" y="238" width="70" height="20" rx="10" fill="#fef3c7"/><text x="821" y="252" text-anchor="middle" fill="#b45309" font-size="11">Сборка</text>
+    <text x="248" y="290">TEST-0003</text><text x="360" y="290">user3@example.com</text><text x="560" y="290">2 300 ₽</text><text x="660" y="290">При получении</text>
+    <rect x="786" y="276" width="84" height="20" rx="10" fill="#dcfce7"/><text x="828" y="290" text-anchor="middle" fill="#15803d" font-size="11">Отправлен</text>
+    <text x="248" y="328">TEST-0004</text><text x="360" y="328">user4@example.com</text><text x="560" y="328">450 ₽</text><text x="660" y="328">СБП</text>
+    <rect x="786" y="314" width="84" height="20" rx="10" fill="#fee2e2"/><text x="828" y="328" text-anchor="middle" fill="#b91c1c" font-size="11">Отменён</text>
+    <text x="248" y="366">TEST-0005</text><text x="360" y="366">user5@example.com</text><text x="560" y="366">990 ₽</text><text x="660" y="366">Перевод</text>
+    <rect x="786" y="352" width="96" height="20" rx="10" fill="#f4f4f5"/><text x="834" y="366" text-anchor="middle" fill="#52525b" font-size="11">Ждёт оплаты</text>
+  </g>
+
+  <rect x="228" y="400" width="708" height="136" rx="10" fill="#fff"/>
+  <text x="248" y="428" font-size="14" font-weight="700" fill="#18181b">Журнал аудита</text>
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" fill="#3f3f46">
+    <text x="248" y="456">12:04  moderator@example.com  order.status   TEST-0003  NEW → SHIPPED</text>
+    <text x="248" y="480">11:52  admin@example.com      product.update  SKU-TEST-02  price 1100 → 1200</text>
+    <text x="248" y="504">11:40  moderator@example.com  user.role      <tspan fill="#b91c1c">403 FORBIDDEN (нет права users.manage)</tspan></text>
+  </g>
+</svg>

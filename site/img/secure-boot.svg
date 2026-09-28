@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 380" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" role="img" aria-label="Цепочка доверия Secure Boot со своим ключом: прошивка, rEFInd, ядро Linux и Windows">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#52525b"/></marker>
+  </defs>
+  <rect width="960" height="380" rx="12" fill="#fafafa"/>
+  <g font-size="13">
+    <rect x="24" y="110" width="210" height="160" rx="10" fill="#18181b"/>
+    <text x="129" y="138" text-anchor="middle" font-weight="600" fill="#fff">UEFI, база db</text>
+    <g font-size="11" fill="#d4d4d8">
+      <text x="40" y="166">● свой X.509-ключ</text>
+      <text x="40" y="188">● Microsoft Windows PCA 2011</text>
+      <text x="40" y="210">● Windows UEFI CA 2023</text>
+      <text x="40" y="232">● Option ROM UEFI CA 2023</text>
+      <text x="40" y="254" fill="#a1a1aa">+ MOK: тот же свой ключ</text>
+    </g>
+
+    <rect x="300" y="150" width="150" height="70" rx="10" fill="#ccfbf1" stroke="#0f766e"/>
+    <text x="375" y="180" text-anchor="middle" font-weight="600" fill="#134e4a">rEFInd</text>
+    <text x="375" y="200" text-anchor="middle" font-size="11" fill="#115e59">подписан своим ключом</text>
+
+    <rect x="520" y="40" width="200" height="70" rx="10" fill="#ccfbf1" stroke="#0f766e"/>
+    <text x="620" y="70" text-anchor="middle" font-weight="600" fill="#134e4a">Ядро Linux (EFI stub)</text>
+    <text x="620" y="90" text-anchor="middle" font-size="11" fill="#115e59">переподписывается хуком APT</text>
+
+    <rect x="520" y="150" width="200" height="70" rx="10" fill="#ccfbf1" stroke="#0f766e"/>
+    <text x="620" y="180" text-anchor="middle" font-weight="600" fill="#134e4a">GRUB (запасной путь)</text>
+    <text x="620" y="200" text-anchor="middle" font-size="11" fill="#115e59">подпись добавляется один раз</text>
+
+    <rect x="520" y="260" width="200" height="70" rx="10" fill="#fff" stroke="#d4d4d8"/>
+    <text x="620" y="290" text-anchor="middle" font-weight="600" fill="#18181b">Windows Boot Manager</text>
+    <text x="620" y="310" text-anchor="middle" font-size="11" fill="#71717a">подпись Microsoft CA</text>
+
+    <rect x="780" y="40" width="156" height="70" rx="10" fill="#fff" stroke="#d4d4d8"/>
+    <text x="858" y="70" text-anchor="middle" font-weight="600" fill="#18181b">DKMS-модули</text>
+    <text x="858" y="90" text-anchor="middle" font-size="11" fill="#71717a">драйвер GPU, ключ MOK</text>
+  </g>
+  <g stroke="#52525b" stroke-width="1.6" fill="none" marker-end="url(#a)">
+    <path d="M234 185 H296"/>
+    <path d="M450 175 C485 175 485 75 516 75"/>
+    <path d="M450 185 H516"/>
+    <path d="M450 195 C485 195 485 295 516 295"/>
+    <path d="M720 75 H776"/>
+  </g>
+  <text x="480" y="362" font-size="12" fill="#71717a" text-anchor="middle">Проверка: sbverify --list (подписи файла), efi-readvar (содержимое db), mokutil --sb-state</text>
+</svg>

@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 400" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" role="img" aria-label="Схема: одна матрица прав проверяется и в Edge middleware, и в каждом обработчике API">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#52525b"/></marker>
+  </defs>
+  <rect width="960" height="400" rx="12" fill="#fafafa"/>
+  <g font-size="13" text-anchor="middle">
+    <rect x="24" y="150" width="130" height="60" rx="10" fill="#fff" stroke="#d4d4d8"/>
+    <text x="89" y="176" fill="#18181b" font-weight="600">Запрос</text><text x="89" y="195" fill="#71717a" font-size="11">JWT-сессия</text>
+
+    <rect x="204" y="150" width="170" height="60" rx="10" fill="#ccfbf1" stroke="#0f766e"/>
+    <text x="289" y="176" fill="#134e4a" font-weight="600">Edge middleware</text><text x="289" y="195" fill="#115e59" font-size="11">можно ли на этот раздел?</text>
+
+    <rect x="424" y="150" width="170" height="60" rx="10" fill="#ccfbf1" stroke="#0f766e"/>
+    <text x="509" y="176" fill="#134e4a" font-weight="600">Обработчик API</text><text x="509" y="195" fill="#115e59" font-size="11">можно ли это действие?</text>
+
+    <rect x="644" y="150" width="130" height="60" rx="10" fill="#fff" stroke="#d4d4d8"/>
+    <text x="709" y="176" fill="#18181b" font-weight="600">zod-валидация</text><text x="709" y="195" fill="#71717a" font-size="11">входные данные</text>
+
+    <rect x="814" y="150" width="122" height="60" rx="10" fill="#fff" stroke="#d4d4d8"/>
+    <text x="875" y="176" fill="#18181b" font-weight="600">БД + аудит</text><text x="875" y="195" fill="#71717a" font-size="11">кто, что, когда</text>
+  </g>
+  <g stroke="#52525b" stroke-width="1.6" fill="none" marker-end="url(#a)">
+    <path d="M154 180 H200"/><path d="M374 180 H420"/><path d="M594 180 H640"/><path d="M774 180 H810"/>
+    <path d="M289 210 V250"/><path d="M509 210 V250"/>
+  </g>
+  <g font-size="11" fill="#b91c1c" text-anchor="middle">
+    <rect x="239" y="252" width="100" height="24" rx="12" fill="#fee2e2"/><text x="289" y="268">нет → 403</text>
+    <rect x="459" y="252" width="100" height="24" rx="12" fill="#fee2e2"/><text x="509" y="268">нет → 403</text>
+  </g>
+
+  <rect x="264" y="24" width="290" height="96" rx="10" fill="#fff" stroke="#0f766e" stroke-dasharray="5 4"/>
+  <text x="409" y="46" font-size="13" font-weight="700" fill="#134e4a" text-anchor="middle">Одна матрица прав (общий пакет)</text>
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" fill="#3f3f46">
+    <text x="280" y="68">ADMIN      orders.* products.* users.*</text>
+    <text x="280" y="86">MODERATOR  orders.* products.* reviews.*</text>
+    <text x="280" y="104">CUSTOMER   own orders, cart, reviews</text>
+  </g>
+  <g stroke="#0f766e" stroke-width="1.4" stroke-dasharray="4 4" fill="none" marker-end="url(#a)">
+    <path d="M330 120 L300 146"/><path d="M490 120 L505 146"/>
+  </g>
+
+  <text x="480" y="330" font-size="13" fill="#3f3f46" text-anchor="middle">Проверка в двух местах: если middleware когда-нибудь пропустит путь,</text>
+  <text x="480" y="350" font-size="13" fill="#3f3f46" text-anchor="middle">обработчик API всё равно откажет. Роли и адреса на схеме условные.</text>
+</svg>

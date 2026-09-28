@@ -1,0 +1,12 @@
+# Никаких реальных данных в репозитории
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.heic
+*.pdf
+*.docx
+*.xlsx
+*.csv
+*.mp4
+*.env
